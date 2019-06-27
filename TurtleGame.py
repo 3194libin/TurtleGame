@@ -7,6 +7,7 @@ size = width,height = 600,400
 speed = [-2,1]
 bg = (255,255,255)
 
+fullscreen = False
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("初次见面，请大家多多关照！")
 
@@ -29,6 +30,13 @@ while True:
                 speed = [0,-1]
             if event.key == pygame.K_DOWN:
                 speed = [0,1]
+
+            if event.key == pygame.K_F11:
+                fullscreen = not fullscreen
+                if fullscreen:
+                    screen = pygame.display.set_mode((1920,1080),pygame.FULLSCREEN | pygame.HWSURFACE)
+                else:
+                    screen = pygame.display.set_mode(size)
     position = position.move(speed)
 
     if position.left<0 or position.right>width:
