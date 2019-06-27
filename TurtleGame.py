@@ -28,4 +28,5 @@ while True:
 
     screen.fill(bg)
     screen.blit(turtle,position)
-    pygame.display.filp()
+    pygame.display.flip()
+    pygame.time.delay(10)
