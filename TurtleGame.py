@@ -13,6 +13,8 @@ pygame.display.set_caption("初次见面，请大家多多关照！")
 turtle = pygame.image.load('turtle.jpg')
 position = turtle.get_rect()
 
+l_head = turtle
+r_head = pygame.transform.flip(turtle,True,False)
 while True:
     for event in pygame.event.get():
         if event.type ==pygame.QUIT:
@@ -21,11 +23,11 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 speed = [-1,0]
-            if event.type == pygame.K_RIGHT:
+            if event.key == pygame.K_RIGHT:
                 speed = [1, 0]
-            if event.type == pygame.K_UP:
+            if event.key == pygame.K_UP:
                 speed = [0,-1]
-            if event.type == pygame.K_DOWN:
+            if event.key == pygame.K_DOWN:
                 speed = [0,1]
     position = position.move(speed)
 
