@@ -18,6 +18,15 @@ while True:
         if event.type ==pygame.QUIT:
             sys.exit()
 
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                speed = [-1,0]
+            if event.type == pygame.K_RIGHT:
+                speed = [1, 0]
+            if event.type == pygame.K_UP:
+                speed = [0,-1]
+            if event.type == pygame.K_DOWN:
+                speed = [0,1]
     position = position.move(speed)
 
     if position.left<0 or position.right>width:
